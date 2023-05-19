@@ -1,4 +1,4 @@
-package com.crud.crudoperations.exceptions;
+package com.crud.operations.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

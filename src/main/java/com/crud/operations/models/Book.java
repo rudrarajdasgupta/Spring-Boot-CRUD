@@ -1,4 +1,4 @@
-package com.crud.crudoperations.models;
+package com.crud.operations.models;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.crud.crudoperations;
+package com.crud.operations.data;
 
-import com.crud.crudoperations.models.Book;
-import com.crud.crudoperations.repos.BookRepository;
+import com.crud.operations.models.Book;
+import com.crud.operations.repos.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.crud.crudoperations.actuators;
+package com.crud.operations.actuators;
 
 import org.springframework.boot.actuate.info.Info;
 import org.springframework.boot.actuate.info.InfoContributor;
