@@ -1,11 +1,14 @@
 package com.crud.operations.services;
 
+import com.crud.operations.exceptions.ResourceAlreadyExistsException;
+import com.crud.operations.exceptions.ResourceNotFoundException;
 import com.crud.operations.models.Book;
 import com.crud.operations.repos.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -23,10 +26,13 @@ public class BookService {
 
     public Book getBookById(Long id) {
         return bookRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException());
     }
 
     public Book createBook(Book book) {
+        Optional<Book> b = bookRepository.findById(book.getId());
+        if (b.isPresent())
+            throw new ResourceAlreadyExistsException();
         return bookRepository.save(book);
     }
 
